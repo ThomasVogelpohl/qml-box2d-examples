@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shared/BoxBody.qml</file>
+        <file>shared/ChainBody.qml</file>
+        <file>shared/CircleBody.qml</file>
+        <file>shared/EdgeBody.qml</file>
+        <file>shared/ImageBoxBody.qml</file>
+        <file>shared/PhysicsItem.qml</file>
+        <file>shared/PolygonBody.qml</file>
+        <file>shared/RectangleBoxBody.qml</file>
+        <file>shared/ScreenBoundaries.qml</file>
+    </qresource>
+</RCC>
