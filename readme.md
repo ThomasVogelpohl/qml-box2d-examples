@@ -19,6 +19,7 @@ https://github.com/qml-box2d/qml-box2d
 
 ### Build the project:
 Just load the qml-box2d-example.pro file into QtCreator and compile for desktop, iOS or Android.
+start the examples with clicking RUN in QtCreator.
 
 ### iPad screenshots:
 <img src="./screenshots/IMG_0645.PNG" width="800" height="600">
