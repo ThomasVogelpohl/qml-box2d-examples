@@ -178,13 +178,13 @@ Image {
 
 
         // Disabled as it cause a crash
-        // DebugDraw {
-        //     id: debugDraw
-        //     anchors.fill: physicsRoot
-        //     world: world
-        //     opacity: 0.75
-        //     visible: false
-        // }
+        DebugDraw {
+            id: debugDraw
+            anchors.fill: physicsRoot
+            world: world
+            opacity: 0.75
+            visible: false
+        }
     }
 
 

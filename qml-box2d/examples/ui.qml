@@ -10,6 +10,9 @@ Window {
 
     visible: true;
 
+    property url nextItemToLoad: ""
+
+
     ListModel {
         id: scenesList;
         ListElement {
@@ -156,8 +159,25 @@ Window {
                         anchors.fill: parent;
                         onClicked: {
                             listView.currentIndex = index
-                            loader.source = ""
-                            loader.source = path
+                            if(loader.status === Loader.Ready) {
+                                // Destroy loaded item
+                                loader.source = ""
+                                window.nextItemToLoad = path
+                                loaderTimer.running = true
+                            } else if(loader.status === Loader.Loading) {
+                                loader.source = ""
+                                window.nextItemToLoad = path
+                                loaderTimer.running = true
+                            } else if(loader.status === Loader.Error) {
+                                loader.source = null
+                                window.nextItemToLoad = path
+                                loaderTimer.running = true
+                            } else if(loader.status === Loader.Null) {
+                                loader.source = path
+                                window.nextItemToLoad = ""
+                            } else {
+                                console.log("loader.status: " + loader.status + " - Undefined")
+                            }
                         }
                     }
                 }
@@ -183,6 +203,16 @@ Window {
                 width: parent.width
                 height: parent.height
                 focus: true
+            }
+
+            Timer {
+                id: loaderTimer
+                interval: 100; running: false; repeat: false
+                onTriggered: {
+                    console.log("Timer triggered - window.nextItemToLoad: " + window.nextItemToLoad + " - loader.source: " + loader.source)
+                    loader.source = window.nextItemToLoad
+                    window.nextItemToLoad = ""
+                }
             }
         }
     }
