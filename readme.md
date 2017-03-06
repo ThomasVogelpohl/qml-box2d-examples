@@ -5,6 +5,10 @@
 This project is intended to allow you to quickly try out the examples provided by the qml-box plugin without installing the lib and without using qmlscene.
 Instead, qml-box2d gets compiled as a static plugin, so that the qml-box2d-examples can also be tested on Apple iPad and Android tablets without hassle.
 
+### Similar repo with Google LiquidFun integration:
+You can find a similar repo but with additional LiquidFun integration here:
+https://github.com/ThomasVogelpohl/qml-box2d-liquidfunexamples.git
+
 ### Caveats:
 * The iPads Retina display does still use 1024x768 pixels and therefore the examples are full screen. Android tablets address the full resolution and therefore the examples are currently shown half size on android tablets.
 * Included the qml-box2d in this repo instead of just adding the qml-box2d repo as submodule. Reason: As the plugin/plugin has been linked statically, to avoid collision with existing qml-box2d libaries on your system, the static version has been called Box2DStatic. Therefore I changed the includes  to pull in Box2DStatic.
